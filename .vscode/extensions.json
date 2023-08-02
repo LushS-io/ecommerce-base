@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "ms-python.vscode-pylance",
+    "ms-python.python",
+    "qwtel.sqlite-viewer",
+    "ms-azuretools.vscode-azureappservice"
+  ]
+}
