@@ -123,3 +123,29 @@ Here is a breakdown of the different directories and files in the project:
 This project structure follows common conventions for organizing a Flask application, separating concerns into different modules and directories.
 
 That's the overview of the project structure. It provides a clear separation of concerns and makes it easier to navigate and maintain the Flask app codebase.
+
+### Deployment
+
+To deploy the Flask app to Azure App Service, follow these steps:
+
+1. Start up an Azure Web App.
+2. Make sure you have Python installed on your machine. If not, install it.
+3. Install the Azure App Service extension in Visual Studio Code.
+4. Open the command palette in Visual Studio Code (press `Ctrl+Shift+P` or `Cmd+Shift+P`) and search for "Azure: Sign In" to sign in to your Azure account.
+5. Once signed in, open the command palette again and search for "Azure App Service: Create New Web App".
+6. Follow the prompts to create a new web app. Select the appropriate subscription, resource group, and other configuration options.
+7. After creating the web app, open the command palette and search for "Azure App Service: Deploy to Web App".
+8. Select the web app you created in the previous step.
+9. Choose the deployment method (e.g., Local Git, GitHub, Azure DevOps, etc.) and follow the prompts to complete the deployment.
+10. Once the deployment is complete, navigate to the Azure portal and open the web app.
+11. In the web app's settings, locate the "Configuration" section.
+12. Add the following application settings:
+    - `ENV`: Set the value to `production`.
+    - `SECRET_KEY`: Set the value to a secure secret key for your app.
+13. Save the configuration changes.
+14. Restart the web app to apply the new configuration settings.
+15. Your Flask app should now be deployed and accessible through the Azure web app URL.
+
+Make sure to replace any placeholder values (e.g., `<your-web-app-name>`, `<your-resource-group>`) with the actual names you used during the deployment process.
+
+That's the overview of deploying the Flask app to Azure App Service. By following these steps, you can easily deploy your Flask app and make it available on the web.
