@@ -6,4 +6,4 @@ if __name__ == '__main__':
     if app.config['ENV'] == 'development':
         app.run(debug=True)
     else:
-        app.run(port=8000)
+        app.run()
