@@ -1,9 +1,10 @@
 import os
 import secrets
-from dotenv_vault import load_dotenv
 
 '''Will load .env locally and key-vault when deployed on Azure'''
-load_dotenv()
+if os.getenv('ENV') == 'development':
+  from dotenv import load_dotenv
+  load_dotenv()
 
 class Config:
   ENV = os.getenv('ENV', 'development')
