@@ -3,4 +3,7 @@ from app import create_app
 app = create_app()
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    if app.config['ENV'] == 'development':
+        app.run(debug=True)
+    else:
+        app.run()

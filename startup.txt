@@ -1,0 +1,1 @@
+gunicorn --bind=0.0.0.0 --timeout 1200 --workers=4 --threads=4 --log-level=debug --log-file=- --access-logfile=- --error-logfile=- --capture-output --enable-stdio-inheritance --reload --reload-engine=auto run:app
