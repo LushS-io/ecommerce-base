@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Page</title>
+</head>
+<body>
+    <div id="content" align="center">
+        <form method="post">
+            <h1>Register</h1>
+            {{ form.hidden_tag() }}
+            <label for="username">Username:</label><br>
+            {{ form.username(id='username') }}<br>
+            <label for="email">Email:</label><br>
+            {{ form.email(id='email') }}<br>
+            <label for="password">Password:</label><br>
+            {{ form.password(id='password') }}<br>
+            <label for="confirm">Confirm Password:</label><br>
+            {{ form.confirm(id='confirm') }}<br>
+            {{ form.submit() }}
+        </form>
+    </div>
+</body>
+</html>
