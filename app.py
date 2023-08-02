@@ -1,8 +1,10 @@
 from flask_wtf.csrf import CSRFProtect
 from extensions import app, login_manager, db
+from flask import Flask
+from config import Config
 
 
-def create_app() -> object:
+def create_app() -> Flask:
   """
   Creates a Flask application instance.
 
@@ -14,12 +16,7 @@ def create_app() -> object:
   db.init_app(app)
 
   # Configure the app's secret key
-  from config import generate_key
-  app.config['SECRET_KEY'] = generate_key()
-
-  # Save the secret key in a file
-  with open('.env', 'w') as f:
-    f.write(f'SECRET_KEY={app.config["SECRET_KEY"]}')
+  app.config['SECRET_KEY'] = Config.get_key()
 
   # Configure CSRF protection
   csrf = CSRFProtect(app)
